@@ -1,19 +1,35 @@
 .portfolio {
     padding-top: 94px;
     padding-bottom: 94px;
-
-&__list {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
 }
 
-&__item:not(:last-child) {
+.portfolio__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 35px;
+    }
+}
+
+.portfolio__item:not(:last-child) {
     margin-right: 8px;
 }
 
-&__btn {
+.portfolio__btn {
     font-family: inherit;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    padding: 6px 22px;
+    border: 0px;
     color: var(--header-color);
     background-color: var(--team-color-bg);
     align-items: center;
@@ -22,10 +38,6 @@
     font-size: 16px;
     line-height: 1.6;
     text-align: center;
-    border-radius: 4px;
-    border: none;
-    padding: 6px 22px;
-    position: relative;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
@@ -36,41 +48,68 @@
     }
 }
 
-
-&__works {
+.portfolio__works {
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(-1 * 30px);
-    margin-left: calc(-1 * 30px);
-    padding: 0;
+    gap: 30px;
+    flex-direction: column;
+    
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
 }
 
-&__work {
+.portfolio__work {
     background-color: var(--header-color-bg);
     flex-basis: calc(100% / 3 - 30px);
-    margin-top: 30px;
-    margin-left: 30px;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
 
     &:hover,
     &:focus {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
     }
-}
 
-&__box {
-    position: relative;
-    overflow: hidden;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+    }
 }
-
-&__info {
+.portfolio__info {
     padding: 20px 24px;
     border-bottom: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
     border-right: 1px solid var(--border-color);
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        max-width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        max-width: 370px;
+    }
+}
+.portfolio__box {
+    position: relative;
+    overflow: hidden;
+    
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        width: 354px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        width: 370px;
+    }
 }
 
-&__link {
+.portfolio__link {
     display: block;
 
     &:hover .overlay,
@@ -79,9 +118,9 @@
     }
 }
 
-&__header {
+.portfolio__header {
     color: var(--header-color);
-    font-weight: 700;
+    font-weight: bold;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
@@ -89,13 +128,13 @@
     margin-bottom: 4px;
 }
 
-&__text {
+.portfolio__text {
     color: var(--text-color);
     font-weight: 400;
     font-size: 16px;
     line-height: 1.9;
 }
-}
+
 
 .nav__link--active {
     color: var(--hover-color);
@@ -104,19 +143,26 @@
 
 .overlay {
     position: absolute;
-    display: flex;
-    overflow: auto;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
+
+    display: flex;
     align-items: center;
     padding: 24px;
+
     background: rgb(33 150 243 / 0.9);
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-&__text {
+    .portfolio__item:hover & {
+        transform: translateY(0);
+    }
+}
+
+.overlay__text {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -124,5 +170,4 @@
     line-height: 1.6;
     letter-spacing: 0.03em;
     color: var(--header-color-bg);
-}
 }
