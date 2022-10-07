@@ -34,6 +34,10 @@
     letter-spacing: 0.02em;
 
     color: #212121;
+    &:hover,
+    &:focus {
+        color: #2196F3;
+    }
 }
 
 .mobile-menu-icon {
@@ -118,7 +122,7 @@
 }
 
 .mobile-menu-contacts-item .accent {
-    font-size: 34px;
+    font-size: 27px;
     color: #2196F3;
 }
 
@@ -140,11 +144,15 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 10px;
     line-height: 1.22;
     letter-spacing: 0.02em;
 
     color: #2196F3;
+
+    @media screen and (min-width: 480px) {
+        font-size: 18px;
+    }
 }
 
 .mobile-menu-socials-item:not(:last-child) .mobile-menu-socials-link {
@@ -167,4 +175,8 @@
     line-height: 1.16;
     letter-spacing: 0.02em;
     color: var(--text-color);
+    &:hover,
+    &:focus {
+        color: #2196F3;
+    }
 }

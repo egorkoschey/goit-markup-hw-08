@@ -1,5 +1,9 @@
 .container--footer {
     align-items: baseline;
+
+    @media screen and (min-width: 1200px){
+        display: flex;
+    }
 }
 
 .logo__footer {
@@ -8,14 +12,9 @@
 
 .footer {
     background-color: var(--footer-color-bg);
-    display: flex;
     flex-direction: column;
     padding-top: 60px;
     padding-bottom: 60px;
-    
-    @media screen and (min-width: 1200px) {
-            display: flex;
-    }
 }
 
 .footer__box {
@@ -84,7 +83,6 @@
     }
     
     @media screen and (min-width: 1200px) {
-        display: inline-block;
         left: 516px;
         width: 206px;
         margin-right: 93px;
@@ -92,7 +90,6 @@
 }
 
 .social-media--list {
-    display: flex;
     gap: 10px;
 }
 

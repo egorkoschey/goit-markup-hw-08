@@ -764,6 +764,13 @@
       -ms-flex-align: baseline;
           align-items: baseline;
 }
+@media screen and (min-width: 1200px) {
+  .container--footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .logo__footer {
   color: var(--hover-color);
@@ -771,22 +778,12 @@
 
 .footer {
   background-color: var(--footer-color-bg);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 60px;
   padding-bottom: 60px;
-}
-@media screen and (min-width: 1200px) {
-  .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
 }
 
 .footer__box {
@@ -870,7 +867,6 @@
 }
 @media screen and (min-width: 1200px) {
   .social-media__footer {
-    display: inline-block;
     left: 516px;
     width: 206px;
     margin-right: 93px;
@@ -878,9 +874,6 @@
 }
 
 .social-media--list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   gap: 10px;
 }
 
@@ -1150,7 +1143,7 @@
   padding: 40px;
   top: 50%;
   left: 50%;
-  min-width: 450px;
+  min-width: 290px;
   min-height: 609px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1158,6 +1151,11 @@
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: var(--header-color-bg);
+}
+@media screen and (min-width: 451px) {
+  .modal {
+    width: 450px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
@@ -1369,9 +1367,10 @@
 }
 
 .checkbox__btn {
-  width: 200px;
-  height: 50px;
-  margin: 0 124px;
+  min-width: 200px;
+  min-height: 50px;
+  margin-left: 5px;
+  display: inline-block;
   background: var(--hover-button);
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1383,6 +1382,16 @@
 }
 .checkbox__btn:hover, .checkbox__btn:focus {
   background-color: var(--hover-color);
+}
+@media screen and (min-width: 451px) {
+  .checkbox__btn {
+    margin-left: 80px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .checkbox__btn {
+    margin-left: 125px;
+  }
 }
 
 .checkbox__text {
@@ -1707,6 +1716,9 @@ img {
   letter-spacing: 0.02em;
   color: #212121;
 }
+.mobile-menu__link:hover, .mobile-menu__link:focus {
+  color: #2196F3;
+}
 
 .mobile-menu-icon {
   fill: currentColor;
@@ -1794,7 +1806,7 @@ img {
 }
 
 .mobile-menu-contacts-item .accent {
-  font-size: 34px;
+  font-size: 27px;
   color: #2196F3;
 }
 
@@ -1819,10 +1831,15 @@ img {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 10px;
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: #2196F3;
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu-socials-link {
+    font-size: 18px;
+  }
 }
 
 .mobile-menu-socials-item:not(:last-child) .mobile-menu-socials-link {
@@ -1845,4 +1862,7 @@ img {
   line-height: 1.16;
   letter-spacing: 0.02em;
   color: var(--text-color);
+}
+.mobile-menu__contacts__mail:hover, .mobile-menu__contacts__mail:focus {
+  color: #2196F3;
 }/*# sourceMappingURL=main.css.map */
