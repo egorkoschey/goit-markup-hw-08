@@ -171,8 +171,12 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.6;
     letter-spacing: 0.03em;
     color: var(--header-color-bg);
+
+    @media screen and (min-width: 480px) {
+        font-size: 18px;
+    }
 }
