@@ -68,7 +68,7 @@
 
 .modal__header {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.15;
     text-align: center;
     letter-spacing: 0.03em;
@@ -77,6 +77,10 @@
 
     @media screen and (min-width: 1200px) {
         line-height: 1.15;
+    }
+
+    @media screen and (min-width: 451px){
+        font-size: 20px;
     }
 }
 
